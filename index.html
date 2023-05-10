@@ -14,8 +14,8 @@
         const __tempEl__ = document.createElement('input');
         const emailInputElement = document.querySelector('#emailInput');
         __tempEl__.style.position = 'absolute';
-        __tempEl__.style.top = el.offsetTop + 7 + 'px';
-        __tempEl__.style.left = el.offsetLeft + 'px';
+        __tempEl__.style.top = emailInputElement.offsetTop + 7 + 'px';
+        __tempEl__.style.left = emailInputElement.offsetLeft + 'px';
         __tempEl__.style.height = 0;
         __tempEl__.style.opacity = 0;
         document.body.appendChild(__tempEl__);
@@ -23,6 +23,7 @@
         setTimeout(() => {
           emailInputElement.focus();
           emailInputElement.click();
+          document.body.removeChild(__tempEl__);
         }, 100);
       })();
     </script>
