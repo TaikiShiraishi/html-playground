@@ -11,10 +11,19 @@
     <input id="emailInput" type="email" />
     <script>
       (function () {
+        const __tempEl__ = document.createElement('input');
         const emailInputElement = document.querySelector('#emailInput');
-        emailInputElement.setAttribute('autofocus', 'autofocus');
-        emailInputElement.focus();
-        emailInputElement.click();
+        __tempEl__.style.position = 'absolute';
+        __tempEl__.style.top = el.offsetTop + 7 + 'px';
+        __tempEl__.style.left = el.offsetLeft + 'px';
+        __tempEl__.style.height = 0;
+        __tempEl__.style.opacity = 0;
+        document.body.appendChild(__tempEl__);
+        __tempEl__.focus();
+        setTimeout(() => {
+          emailInputElement.focus();
+          emailInputElement.click();
+        }, 100);
       })();
     </script>
   </body>
