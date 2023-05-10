@@ -8,6 +8,12 @@
   </head>
   <body>
     <label for="email">email:</label>
-    <input type="email" autofocus />
+    <input id="emailInput" type="email" autofocus />
+    <script>
+      (function () {
+        const emailInputElement = document.querySelector('#emailInput');
+        emailInputElement.click();
+      })();
+    </script>
   </body>
 </html>
